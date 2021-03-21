@@ -152,13 +152,14 @@
                     <form name="contact-myprofile">
                         <div class="form-group">
                             <label for="nama">Nama</label>
-                            <input type="text" id="nama" class="form-control" placeholder="Masukkan nama" name="nama">
+                            <input type="text" id="nama" class="form-control" placeholder="Masukkan nama" name="nama"
+                                required class="validate">
                         </div>
 
                         <div class="form-group">
                             <label for="email">Email</label>
                             <input type="email" id="email" class="form-control" placeholder="Masukkan email"
-                                name="email">
+                                name="email" required class="validate">
                         </div>
 
                         <div class="form-group">
@@ -220,7 +221,7 @@
 
     <script>
         const scriptURL =
-        'https://script.google.com/macros/s/AKfycbxeiz6HE1g36emaQRhWxYo8sZaBowuzxupx2TcR0lcyklP6XA6ZjCfJdw6XZ3e-7eRs/exec'
+            'https://script.google.com/macros/s/AKfycbxeiz6HE1g36emaQRhWxYo8sZaBowuzxupx2TcR0lcyklP6XA6ZjCfJdw6XZ3e-7eRs/exec'
         const form = document.forms['contact-myprofile'];
 
         const btnKirim = document.querySelector('.btn-kirim');
@@ -244,16 +245,16 @@
                 .then(response => {
                     btnLoading.classList.toggle('hidden');
                     btnKirim.classList.toggle('hidden');
-                    
-                // tampilkan alert
-                myAlert.classList.toggle('hidden');
-                
-                // reset formnya
-                form.reset();
+
+                    // tampilkan alert
+                    myAlert.classList.toggle('hidden');
+
+                    // reset formnya
+                    form.reset();
                     console.log('Success!', response)
                 })
-                
-            .catch(error => console.error('Error!', error.message))
+
+                .catch(error => console.error('Error!', error.message))
         })
     </script>
 </body>
